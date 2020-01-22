@@ -1,12 +1,16 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Header from "./components/Header";
 import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 
-const App = ({ car, additionalFeatures, additionalPrice }) => {
+const App = () => {
+  const car = useSelector(state => state.car);
+  const additionalFeatures = useSelector(state => state.additionalFeatures);
+  const additionalPrice = useSelector(state => state.additionalPrice);
+
   return (
     <div className="boxes">
       <div className="box">
@@ -29,4 +33,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {})(App);
+export default App;
