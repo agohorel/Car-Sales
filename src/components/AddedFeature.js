@@ -7,9 +7,10 @@ const AddedFeature = props => {
   const { removeFeature } = props;
   return (
     <li>
-      <button className="button" onClick={() => removeFeature(props.feature)}>
-        X
-      </button>
+      <button
+        className="delete is-medium"
+        onClick={() => removeFeature(props.feature)}
+      ></button>
       {props.feature.name}
     </li>
   );
